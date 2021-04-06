@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-// import { Link as LinkScroll } from 'react-scroll';
+import { Link as LinkScroll } from 'react-scroll';
 import {
 	Button,
 	Flex,
@@ -21,7 +21,7 @@ import {
 import { ContactForm } from '../partials/ContactForm';
 import logo from '../../image/logo.svg';
 // images
-export const Header: React.FC<{}> = ({}) => {
+export const Header: React.FC<{}> = () => {
 	const [ desktopQuery ] = useMediaQuery('(min-width: 1061px)');
 	const [ hamburgerQuery ] = useMediaQuery('(min-width: 100px) and (max-width: 1061px)');
 	const [ mobileContact ] = useMediaQuery('(min-width: 500px) and (max-width: 1061px)');
@@ -50,23 +50,64 @@ export const Header: React.FC<{}> = ({}) => {
 						<Box className="desktop-nav">
 							<Wrap spacing={10}>
 								<WrapItem>
-									{/* <LinkScroll> */}
-									<a href="/">Home</a>
-									{/* </LinkScroll> */}
+									<LinkScroll
+										activeClass="active"
+										to="header"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										<a href="/">Home</a>
+									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
-									{/* <LinkScroll> */}
-									<a href="/">Reviews</a>
-									{/* </LinkScroll> */}
+									<LinkScroll
+										activeClass="active"
+										to="testimonies"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										<a>Reviews</a>
+									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
-									<a href="/">Properties</a>
+									<LinkScroll
+										activeClass="active"
+										to="properties"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										<a>Properties</a>
+									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
-									<a href="/">Our Vision</a>
+									<LinkScroll
+										activeClass="active"
+										to="vision"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										<a>Our Vision</a>
+									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
-									<a href="/location">Location</a>
+									<LinkScroll
+										activeClass="active"
+										to=""
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										<a href="/location">Location</a>
+									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
 									<Fragment>
@@ -86,8 +127,7 @@ export const Header: React.FC<{}> = ({}) => {
 											<DrawerOverlay>
 												<DrawerContent>
 													<DrawerCloseButton />
-													<DrawerHeader>Free Consultation</DrawerHeader>
-
+													<DrawerHeader>Free Quote</DrawerHeader>
 													<DrawerBody>
 														<ContactForm />
 													</DrawerBody>

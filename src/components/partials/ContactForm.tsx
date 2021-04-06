@@ -28,7 +28,7 @@ function SuccessToast() {
 	});
 }
 
-export const ContactForm: React.FC<{}> = ({}) => {
+export const ContactForm: React.FC<{}> = () => {
 	// show password
 
 	const initialValues: FormProps = {
@@ -97,7 +97,8 @@ export const ContactForm: React.FC<{}> = ({}) => {
 							isLoading={isSubmitting}
 							mt={6}
 							_hover={{
-								backgroundColor: 'red'
+								color: '#198802',
+								backgroundColor: 'white'
 							}}
 						>
 							Submit

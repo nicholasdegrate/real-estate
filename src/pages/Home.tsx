@@ -61,7 +61,7 @@ export const Home: React.FC<{}> = (props) => {
 							<Heading as="h1">
 								TIME TO REBUILD<br /> YOUR LEGACY
 							</Heading>
-							<Text maxWidth="350px" mt={4}>
+							<Text maxWidth="350px" mt={4} display="none">
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam ipsa
 							</Text>
 							{homeContactMobile ? (
@@ -111,14 +111,14 @@ export const Home: React.FC<{}> = (props) => {
 					</Flex>
 				</Box>
 			</header>
-			<Box id="reviews-container" className="max-width" height="300px" mt={40} mb={20}>
+			<Box display="none" id="reviews-container" className="max-width" height="300px" mt={40} mb={20}>
 				<Heading as="h4" size="sm" color="gray.500" textTransform="uppercase">
 					<Center>Testimonies</Center>
 				</Heading>
 				<Heading as="h2" size="lg" mt={2} textAlign="center">
 					<Center>Who Uses Legacy Rebuild Properties</Center>
 				</Heading>
-				<Center textAlign="center" display="none">
+				<Center textAlign="center">
 					<AllTestimonies />
 				</Center>
 			</Box>

@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Box, Flex, FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react';
 
 const createProperty: React.FC = () => {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [ name, setName ] = useState('');
+	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [ paragraph, setParagraph ] = useState('');
 	// const [ image, setImage ] = useState([ '', '' ]);
 	// const [ imageName, setImageName ] = useState('');

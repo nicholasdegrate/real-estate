@@ -2,12 +2,13 @@ import * as React from 'react';
 import { Heading, Text, Box, Flex, useMediaQuery, Spacer, Button, HStack } from '@chakra-ui/react';
 import { PhoneIcon, EmailIcon } from '@chakra-ui/icons';
 
+import map from '../image/map.png';
 import house from '../image/house.jpg';
 // components
 import Footer from '../components/Footer';
 import { Header } from '../components/Header/Index';
 
-const Location: React.FC<{}> = ({}) => {
+export const Location: React.FC<{}> = ({}) => {
 	const [ flexMarginAuto ] = useMediaQuery('min-width(100px) and max-width(700px)');
 	const [ ImageSizing ] = useMediaQuery('min-width(100px) and max-width(700px)');
 
@@ -61,7 +62,7 @@ const Location: React.FC<{}> = ({}) => {
 							<Box>
 								<Flex mb={4}>
 									<Heading as="h3" size="md" textTransform="capitalize">
-										Texas
+										Georiga
 									</Heading>
 								</Flex>
 							</Box>
@@ -91,7 +92,7 @@ const Location: React.FC<{}> = ({}) => {
 							<Box>
 								<Flex mb={4}>
 									<Heading as="h3" size="md" textTransform="capitalize">
-										Texas
+										Florida
 									</Heading>
 								</Flex>
 							</Box>
@@ -122,7 +123,7 @@ const Location: React.FC<{}> = ({}) => {
 					justify="space-evenly"
 				>
 					<Box bg="red " maxWidth="600px">
-						<img src={house} />
+						<img src={map} />
 					</Box>
 					<Box>
 						<Heading as="h2" size="lg" textAlign="left">
@@ -154,5 +155,3 @@ const Location: React.FC<{}> = ({}) => {
 		</React.Fragment>
 	);
 };
-
-export default Location;
