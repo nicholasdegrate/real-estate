@@ -1,0 +1,67 @@
+.nav {
+    overflow: hidden;
+    .logo-container {
+        margin-left: -4em;
+    }
+    .hamburger {
+        .line {
+            width: 22px;
+            height: 3px;
+            background: #fff;
+            margin: .3em;
+        }
+    }
+}
+// home 
+#home-header {
+    background: #155A87;
+    position: relative;
+    min-height: 700px;
+    max-height: 800px;
+    .home-img {
+        margin: auto;
+        position: absolute;
+        margin-top: 5em;
+        bottom: -5em;
+        left: 0;
+        right: 0;
+        img {
+            width: 90%;
+            margin: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+    }
+    .home-img-container {
+        height: 100%;
+        background: red;
+    }
+    .Home-ContactForm {
+        position: absolute;
+        height: 440px;
+        width: 300px;
+        right:  5em;
+        margin-top: 4em;
+        padding: 1em;
+        background-color: rgb(224, 224, 224);
+        color: #000;
+        form {
+            width: 90%;
+            margin: auto;
+            label {
+                font-size: .8em;
+            }
+            .chakra-form__helper-text {
+                font-size: .5em;
+            }
+            input {
+                border: 1px solid rgb(202, 202, 202);
+            }
+            input::placeholder {
+                font-size: .7em;
+                color: rgb(212, 212, 212);
+            }
+        }
+    }
+}
+
