@@ -1,17 +1,16 @@
-import * as React from 'react';
 import { Slide } from 'pure-react-carousel';
 import { Box, Heading, Text } from '@chakra-ui/react';
 
 type TestimonyCardProps = {
-	number: number;
+	id: number;
 	name: string;
 	para: string;
 };
 
-export const TestimonyCard = ({ number, name, para }: TestimonyCardProps) => {
+export const TestimonyCard = ({ id, name, para }: TestimonyCardProps) => {
 	return (
-		<Slide index={number}>
-			<Box mt={8}>
+		<Slide index={id}>
+			<Box mt={8} mr="10px" ml="10px">
 				<Heading as="h4" size="md">
 					{name}
 				</Heading>

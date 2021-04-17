@@ -58,22 +58,22 @@ export const Header: React.FC<{}> = () => {
 										offset={-100}
 										duration={500}
 									>
-										<a href="/">Home</a>
+										Home
 									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
 									<LinkScroll
 										activeClass="active"
-										to="testimonies"
+										to="reviews-container"
 										spy={true}
 										smooth={true}
 										offset={-100}
 										duration={500}
 									>
-										<a>Reviews</a>
+										Reviews
 									</LinkScroll>
 								</WrapItem>
-								<WrapItem>
+								<WrapItem display="none">
 									<LinkScroll
 										activeClass="active"
 										to="properties"
@@ -82,31 +82,55 @@ export const Header: React.FC<{}> = () => {
 										offset={-100}
 										duration={500}
 									>
-										<a>Properties</a>
+										Properties
 									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
 									<LinkScroll
 										activeClass="active"
-										to="vision"
+										to="homepage-three"
 										spy={true}
 										smooth={true}
 										offset={-100}
 										duration={500}
 									>
-										<a>Our Vision</a>
+										Our Vision
 									</LinkScroll>
 								</WrapItem>
 								<WrapItem>
 									<LinkScroll
 										activeClass="active"
-										to=""
+										to="solution-and-blog-wrapper"
 										spy={true}
 										smooth={true}
 										offset={-100}
 										duration={500}
 									>
-										<a href="/location">Location</a>
+										Solution
+									</LinkScroll>
+								</WrapItem>
+								<WrapItem>
+									<LinkScroll
+										activeClass="active"
+										to="community-section"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										Community
+									</LinkScroll>
+								</WrapItem>
+								<WrapItem>
+									<LinkScroll
+										activeClass="active"
+										to="homepage-five"
+										spy={true}
+										smooth={true}
+										offset={-100}
+										duration={500}
+									>
+										FAQ
 									</LinkScroll>
 								</WrapItem>
 								<WrapItem>

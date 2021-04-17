@@ -143,7 +143,13 @@ label {
 .logo {
   width: 300px;
 }
-
+.group-image {
+  height: 300px;
+  max-width: 435px;
+}
+.chakra-wrap__listitem {
+  cursor: pointer;
+}
 // includes
 @import './includes/header';
 @import './includes/home/main';

@@ -13,13 +13,15 @@ import {
 	AccordionPanel,
 	AccordionIcon,
 	Grid,
+	GridItem,
 	Drawer,
 	DrawerBody,
 	DrawerHeader,
 	DrawerOverlay,
 	DrawerContent,
 	DrawerCloseButton,
-	useDisclosure
+	useDisclosure,
+	Image
 } from '@chakra-ui/react';
 // react-slick
 // import Slider from 'react-slick';
@@ -36,6 +38,10 @@ import Footer from '../components/Footer';
 import house from '../image/house.jpg';
 import apartment from '../image/livingRoom.jpg';
 import man from '../image/business-man.svg';
+import group from '../image/grouppicture.jpg';
+import praying from '../image/praying.jpg';
+import shawn from '../image/handingstuffout.jpg';
+import steven from '../image/steven.jpg';
 
 export const Home: React.FC<{}> = (props) => {
 	// contactMobile
@@ -61,8 +67,8 @@ export const Home: React.FC<{}> = (props) => {
 							<Heading as="h1">
 								TIME TO REBUILD<br /> YOUR LEGACY
 							</Heading>
-							<Text maxWidth="350px" mt={4} display="none">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam ipsa
+							<Text maxWidth="350px" mt={4}>
+								We are here to relieve the stress of selling your home.
 							</Text>
 							{homeContactMobile ? (
 								<Fragment>
@@ -111,7 +117,7 @@ export const Home: React.FC<{}> = (props) => {
 					</Flex>
 				</Box>
 			</header>
-			<Box display="none" id="reviews-container" className="max-width" height="300px" mt={40} mb={20}>
+			<Box id="reviews-container" className="max-width" height="300px" mt={40} mb={20}>
 				<Heading as="h4" size="sm" color="gray.500" textTransform="uppercase">
 					<Center>Testimonies</Center>
 				</Heading>
@@ -153,7 +159,7 @@ export const Home: React.FC<{}> = (props) => {
 				</Box>
 				<AllProperties />
 			</Box>
-			<Box height="100vh">
+			<Box>
 				<section className="homepage-three">
 					<div className="homepage-three-top">
 						<Heading as="h4" size="sm" color="gray.500" textTransform="uppercase">
@@ -218,7 +224,7 @@ export const Home: React.FC<{}> = (props) => {
 				{/* end homepage three */}
 			</Box>
 			<Box className="solution-and-blog-wrapper">
-				<Box height="100vh" className="solutions">
+				<Box className="solutions">
 					<div>
 						<Heading as="h4" size="sm" color="gray.500" textTransform="uppercase">
 							Solutions
@@ -268,6 +274,28 @@ export const Home: React.FC<{}> = (props) => {
 					</Box>
 				</Box>
 			</Box>
+			<section className="community-section">
+				<Box c="#000" w="90%" m="3em">
+					<Heading mb="1em" as="h3" color="#000">
+						Community
+					</Heading>
+					<Grid m="auto" h="500px" templateRows="repeat(2, 1fr)" templateColumns="repeat(5, 1fr)" gap={4}>
+						<GridItem rowStart={1} rowEnd={5} rowSpan={2} colSpan={1} bg="tomato">
+							<Image h="100%" src={shawn} alt="" />
+						</GridItem>
+						<GridItem colSpan={2} bg="papayawhip">
+							<Image h="250px" src={praying} alt="" />
+						</GridItem>
+						<GridItem colSpan={2} bg="papayawhip">
+							<Image h="250px" src={steven} alt="" />
+						</GridItem>
+						<GridItem colSpan={4}>
+							<img className="group-image" src={group} alt="" />
+						</GridItem>
+						<GridItem rowStart={2} rowEnd={4} colStart={4} colEnd={6} />
+					</Grid>
+				</Box>
+			</section>
 			{/* hompage five */}
 			<section className="homepage-five">
 				<ul>
@@ -342,10 +370,3 @@ export const Home: React.FC<{}> = (props) => {
 		</Fragment>
 	);
 };
-// export const getServerSideProps = async () => {
-// 	const reviews = await prisma.reviews.findMany();
-// 	const result = JSON.stringify(reviews);
-// 	return {
-// 		props: { result }
-// 	};
-// };
