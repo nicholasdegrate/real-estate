@@ -42,7 +42,7 @@ const Footer: React.FC<{}> = ({}) => {
 							<p>Phone: 817-480-1556</p>
 						</WrapItem>
 						<WrapItem>
-							<p>Email: legacyrebuildproperties@gmail.com</p>
+							<p>Email: admin@legacyrebuildproperties.com</p>
 						</WrapItem>
 					</Wrap>
 				</Box>
