@@ -1,91 +1,75 @@
 import * as React from 'react';
-import { Formik, Form } from 'formik';
-import { FormControl, FormLabel, FormHelperText, Input, Button, useToast } from '@chakra-ui/react';
-import * as Yup from 'yup';
+import { Formik, Form, Field } from 'formik';
+import { FormControl, FormLabel, Input, Button } from '@chakra-ui/react';
+import emailjs from 'emailjs-com';
+import toast from 'react-hot-toast';
 
-// initialize var
-interface FormProps {
-	fullName: String;
-	email: string;
-	password: string;
-}
-
-// validation
-const RegisterSchema = Yup.object().shape({
-	fullName: Yup.string().required(),
-	email: Yup.string().required().email(),
-	password: Yup.string().required()
-});
-
-function SuccessToast() {
-	const toast = useToast();
-	return toast({
-		title: 'Account created.',
-		description: "We've created your account for you.",
-		status: 'success',
-		duration: 9000,
-		isClosable: true
-	});
-}
 
 export const ContactForm: React.FC<{}> = () => {
 	// show password
 
-	const initialValues: FormProps = {
+	const initialValues= {
 		fullName: '',
 		email: '',
-		password: ''
+		phone: ''
 	};
+	const serviceID: any = process.env.REACT_APP_SERVICE_ID
+	const templateID: any = process.env.REACT_APP_TEMPLATE_ID
+	const userID: any = process.env.REACT_APP_USER_ID
 	return (
 		<div>
 			<Formik
 				initialValues={initialValues}
-				validationSchema={RegisterSchema}
 				onSubmit={(values, actions) => {
-					actions.setSubmitting(true);
+					actions.setSubmitting(true)
+					let template_params: any = {
+						email: `${values.email}`,
+						fullName: `${values.fullName}`,
+						phone: `${values.phone}`
+					};
 					setTimeout(() => {
-						console.log({ values, actions });
-						alert(JSON.stringify(values, null, 2));
-						actions.setSubmitting(false);
-						actions.resetForm();
-					}, 1000);
+							emailjs.send(serviceID, templateID, template_params, userID)
+							.then(() => {
+								toast.success('Successfully sent!')
+								actions.resetForm()
+							}, (err) => {
+								toast.error("This didn't work.")
+							});
+							actions.setSubmitting(false)
+					}, 400);
 				}}
 			>
-				{({ errors, touched, handleChange, handleSubmit, isSubmitting }) => (
-					<Form onSubmit={handleSubmit}>
+				{({  handleChange }) => (
+					<Form >
 						<FormControl id="fullName">
 							<FormLabel>fullName</FormLabel>
-							<Input
-								type="fullName"
-								size="md"
-								variant="filled"
+							<Field
+								type="text"
+								as={Input}
+								name="fullName"
 								placeholder="fullName"
 								onChange={handleChange}
 							/>
-							{/* send error */}
-							{errors.fullName && touched.fullName ? (
-								<FormHelperText>{errors.fullName}</FormHelperText>
-							) : null}
 						</FormControl>
 						<FormControl id="email" mt={4}>
 							<FormLabel>Email address</FormLabel>
-							<Input
+							<Field
 								type="email"
-								size="md"
-								variant="filled"
+								as={Input}
+								name="email"
 								placeholder="email"
 								onChange={handleChange}
 							/>
-							{/* send error */}
-							{errors.email && touched.email ? <FormHelperText>{errors.email}</FormHelperText> : null}
 						</FormControl>
 						<FormControl id="password" mt={4}>
 							<FormLabel>Phone</FormLabel>
-							<Input size="md" variant="filled" placeholder="phone" onChange={handleChange} />
-							{/* send error */}
-							{errors.password && touched.password ? (
-								<FormHelperText>{errors.password}</FormHelperText>
-							) : null}
+							<Field
+								as={Input}
+								type="phone"
+								name="phone"
+								placeholder="phone"
+								onChange={handleChange}
+							/>
 						</FormControl>
 						<Button
 							type="submit"
@@ -94,7 +78,6 @@ export const ContactForm: React.FC<{}> = () => {
 							border="none"
 							bg="#198802"
 							color="#fff"
-							isLoading={isSubmitting}
 							mt={6}
 							_hover={{
 								color: '#198802',
