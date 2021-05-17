@@ -21,7 +21,8 @@ import {
 	DrawerContent,
 	DrawerCloseButton,
 	useDisclosure,
-	Image
+	Image,
+	VStack
 } from '@chakra-ui/react';
 // react-slick
 // import Slider from 'react-slick';
@@ -42,6 +43,8 @@ import group from '../image/grouppicture.jpg';
 import praying from '../image/praying.jpg';
 import shawn from '../image/handingstuffout.jpg';
 import steven from '../image/steven.jpg';
+import great from '../image/10.png';
+import services from '../image/IMG_20210515_170055_141.jpg';
 
 export const Home: React.FC<{}> = (props) => {
 	// contactMobile
@@ -64,12 +67,19 @@ export const Home: React.FC<{}> = (props) => {
 							flexDirection={[ 'column', 'column', 'row', 'row' ]}
 							justifyContent="space-around"
 						>
-							<Heading as="h1">
-								TIME TO REBUILD<br /> YOUR LEGACY
+							<Heading as="h1" maxWidth="600px">
+								<div>
+									We are here to relieve the stress of selling your home with a quick competitive cash
+									offer!
+								</div>
+								<Flex mt="1em" fontSize=".5em" spacing="24px" fontWeight="500">
+									<Box>Any condition</Box>
+									<Box m="0 .5em">Any situation</Box>
+									<Box mr=".5em">No obligation</Box>
+									<Box>No realtor fees</Box>
+								</Flex>
 							</Heading>
-							<Text maxWidth="350px" mt={4}>
-								We are here to relieve the stress of selling your home.
-							</Text>
+							<Text maxWidth="350px" mt={4} />
 							{homeContactMobile ? (
 								<Fragment>
 									<Button
@@ -106,8 +116,8 @@ export const Home: React.FC<{}> = (props) => {
 							<Box w="100%" position="relative">
 								{homeContactDesktop ? (
 									<Box className="Home-ContactForm" boxShadow="base">
-										<Heading as="h4" size="md" mb={4}>
-											<Center>Free Quote</Center>
+										<Heading as="h4" size="md" mb={3} fontSize="1em">
+											<Center>FREE QUOTE BOX -- GET YOUR COMPETITIVE CASH OFFER TODAY!</Center>
 										</Heading>
 										<ContactForm />
 									</Box>
@@ -167,7 +177,7 @@ export const Home: React.FC<{}> = (props) => {
 						</Heading>
 						<Heading as="h2" size="lg" mt={2} textAlign={blogBlock ? 'center' : 'left'}>
 							Our vision is to help you gain a fresh start with a no-hassle approach and offering you a
-							competitive cash offer for your house
+							competitive cash offer for your house.
 						</Heading>
 					</div>
 					<div className="homepage-three-left">
@@ -237,6 +247,9 @@ export const Home: React.FC<{}> = (props) => {
 					<img src={man} alt="" />
 				</Box>
 				<Box className="blog" pt={10}>
+					<Flex justifyContent="center">
+						<Image mt="-2em" src={great} width="1000px" />
+					</Flex>
 					<Heading as="h2" size="lg" mt={2} textAlign="left">
 						<Center display="none">What's New?</Center>
 					</Heading>
@@ -289,10 +302,12 @@ export const Home: React.FC<{}> = (props) => {
 						<GridItem colSpan={2} bg="papayawhip">
 							<Image h="250px" src={steven} alt="" />
 						</GridItem>
-						<GridItem colSpan={4}>
+						<GridItem colSpan={2}>
 							<img className="group-image" src={group} alt="" />
 						</GridItem>
-						<GridItem rowStart={2} rowEnd={4} colStart={4} colEnd={6} />
+						<GridItem colSpan={2}>
+							<img className="group-image" src={services} alt="" />
+						</GridItem>
 					</Grid>
 				</Box>
 			</section>
