@@ -73,10 +73,10 @@ export const Home: React.FC<{}> = (props) => {
 									offer!
 								</div>
 								<Flex mt="1em" fontSize=".5em" spacing="24px" fontWeight="500">
-									<Box>Any condition</Box>
-									<Box m="0 .5em">Any situation</Box>
-									<Box mr=".5em">No obligation</Box>
-									<Box>No realtor fees</Box>
+									<Box>Any condition.</Box>
+									<Box m="0 .5em">Any situation.</Box>
+									<Box mr=".5em">No obligation.</Box>
+									<Box>No realtor fees!</Box>
 								</Flex>
 							</Heading>
 							<Text maxWidth="350px" mt={4} />
@@ -117,7 +117,7 @@ export const Home: React.FC<{}> = (props) => {
 								{homeContactDesktop ? (
 									<Box className="Home-ContactForm" boxShadow="base">
 										<Heading as="h4" size="md" mb={3} fontSize="1em">
-											<Center>FREE QUOTE BOX -- GET YOUR COMPETITIVE CASH OFFER TODAY!</Center>
+											<Center>GET YOUR COMPETITIVE CASH OFFER TODAY!</Center>
 										</Heading>
 										<ContactForm />
 									</Box>

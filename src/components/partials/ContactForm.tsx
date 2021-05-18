@@ -47,12 +47,12 @@ export const ContactForm: React.FC<{}> = () => {
 				{({ handleChange }) => (
 					<Form>
 						<FormControl id="fullName">
-							<FormLabel>fullName</FormLabel>
+							<FormLabel>Full Name</FormLabel>
 							<Field
 								type="text"
 								as={Input}
 								name="fullName"
-								placeholder="fullName"
+								placeholder="Full Name"
 								onChange={handleChange}
 							/>
 						</FormControl>
