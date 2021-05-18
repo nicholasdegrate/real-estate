@@ -150,6 +150,15 @@ label {
 .chakra-wrap__listitem {
   cursor: pointer;
 }
+
+.embed {
+  height: 100%;
+  width: 100%;
+}
+.embed-width {
+  margin: -2em 0 0 0 ;
+  width: 80vw;
+}
 // includes
 @import './includes/header';
 @import './includes/home/main';

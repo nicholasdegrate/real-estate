@@ -45,6 +45,9 @@ import shawn from '../image/handingstuffout.jpg';
 import steven from '../image/steven.jpg';
 import great from '../image/10.png';
 import services from '../image/IMG_20210515_170055_141.jpg';
+import test from '../image/allsizesvg/300px 600px/300px 600px (4).svg';
+import test1 from '../image/010.png';
+import test2 from '../image/004.png';
 
 export const Home: React.FC<{}> = (props) => {
 	// contactMobile
@@ -76,7 +79,7 @@ export const Home: React.FC<{}> = (props) => {
 									<Box>Any condition.</Box>
 									<Box m="0 .5em">Any situation.</Box>
 									<Box mr=".5em">No obligation.</Box>
-									<Box>No realtor fees!</Box>
+									<Box>No realtor fees! </Box>
 								</Flex>
 							</Heading>
 							<Text maxWidth="350px" mt={4} />
@@ -181,7 +184,7 @@ export const Home: React.FC<{}> = (props) => {
 						</Heading>
 					</div>
 					<div className="homepage-three-left">
-						<img src={apartment} alt="room" />
+						<Image src={test2} className="embed" />
 					</div>
 					<div className="homepage-three-right">
 						<ul>
@@ -248,7 +251,7 @@ export const Home: React.FC<{}> = (props) => {
 				</Box>
 				<Box className="blog" pt={10}>
 					<Flex justifyContent="center">
-						<Image mt="-2em" src={great} width="1000px" />
+						<embed src={test1} className="embed embed-width" />
 					</Flex>
 					<Heading as="h2" size="lg" mt={2} textAlign="left">
 						<Center display="none">What's New?</Center>
