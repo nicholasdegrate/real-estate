@@ -57,7 +57,7 @@ export const ContactForm: React.FC<{}> = () => {
 							/>
 						</FormControl>
 						<FormControl id="email" mt={4}>
-							<FormLabel>Email address</FormLabel>
+							<FormLabel>Email Address</FormLabel>
 							<Field type="email" as={Input} name="email" placeholder="email" onChange={handleChange} />
 						</FormControl>
 						<FormControl id="password" mt={4}>
