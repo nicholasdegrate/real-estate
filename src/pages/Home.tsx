@@ -290,7 +290,7 @@ export const Home: React.FC<{}> = (props) => {
 					</Box>
 				</Box>
 			</Box>
-			<section className="community-section">
+			{/* <section className="community-section">
 				<Box c="#000" w="90%" m="3em">
 					<Heading mb="1em" as="h3" color="#000">
 						Community
@@ -313,9 +313,9 @@ export const Home: React.FC<{}> = (props) => {
 						</GridItem>
 					</Grid>
 				</Box>
-			</section>
+			</section> */}
 			{/* hompage five */}
-			<section className="homepage-five">
+			{/* <section className="homepage-five">
 				<ul>
 					<li className="choose-title-container">
 						<Heading as="h4" size="sm" color="gray.500" textTransform="uppercase">
@@ -382,7 +382,7 @@ export const Home: React.FC<{}> = (props) => {
 						</AccordionItem>
 					</Accordion>
 				</ul>
-			</section>
+			</section> */}
 			{/* end homepage five */}
 			<Footer />
 		</Fragment>
